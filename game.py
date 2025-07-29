@@ -208,7 +208,6 @@ class Game:
             if player_rect.colliderect(trash.get_rect()):
                 self.player.collected_trash.append(trash)
                 self.trash_list.remove(trash)
-                self.score += 10
                 if self.collect_sound:
                     self.collect_sound.play()
 
