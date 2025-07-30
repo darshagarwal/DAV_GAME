@@ -25,7 +25,6 @@ GRAY = (128, 128, 128)
 LIGHT_BLUE = (173, 216, 230)
 
 # Sound paths
-MUSIC_PATH = Path("assets/background_music.mp3")
 SOUND_CORRECT = Path("assets/correct.wav")
 SOUND_WRONG = Path("assets/wrong.wav")
 SOUND_COLLECT = Path("assets/collect.wav")
@@ -169,9 +168,6 @@ class Game:
         self.level_timer = 0
 
         pygame.mixer.init()
-        if MUSIC_PATH.exists():
-            pygame.mixer.music.load(str(MUSIC_PATH))
-            pygame.mixer.music.play(-1)
         self.correct_sound = pygame.mixer.Sound(str(SOUND_CORRECT)) if SOUND_CORRECT.exists() else None
         self.wrong_sound = pygame.mixer.Sound(str(SOUND_WRONG)) if SOUND_WRONG.exists() else None
         self.collect_sound = pygame.mixer.Sound(str(SOUND_COLLECT)) if SOUND_COLLECT.exists() else None
